@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import './FirstPage.css';
-import firstpageVideo from "./assets/firstpage.mov";
 import cloudImg from "./assets/vecteezy_single-white-cumulus-cloud-isolated-on-white-background_47831704.png";
 
 function FirstPage({ onYes }) {
@@ -22,7 +21,7 @@ function FirstPage({ onYes }) {
     <div className="first-page-container">
       <video
         className="background-video"
-        src={firstpageVideo}
+        src="/firstpage.mov"
         autoPlay
         loop
         muted

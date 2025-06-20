@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './ThirdPage.css';
 import bgVideo from "./assets/vecteezy_blue-purple-glowing-geometric-abstract-background-pattern-of_31129768.mp4";
-import playVideo from "./assets/videoplayback.mp4";
 
 const rainWords = [
   "PLEASEE",
@@ -71,7 +70,7 @@ function ThirdPage() {
           <button className="close-playvideo" onClick={() => setShowPlayVideo(false)}>&times;</button>
           <video
             className="playvideo-main"
-            src={playVideo}
+            src="/videoplayback.mp4"
             autoPlay
             controls
             loop
