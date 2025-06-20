@@ -1,0 +1,211 @@
+.third-page-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Press Start 2P', 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  background: #1a0033;
+}
+
+.third-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.7) blur(1px) saturate(1.2);
+}
+
+.third-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  max-width: 600px;
+}
+
+.third-heading {
+  font-size: 2.2rem;
+  color: #ff69b4;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 0 #ffb6c1;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.third-btn-group {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.third-btn {
+  font-family: inherit;
+  font-size: 1.3rem;
+  padding: 1.1rem 2.8rem;
+  background: linear-gradient(90deg, #ffb6c1 0%, #ffe6fa 100%);
+  color: #ff1493;
+  border: 2.5px solid #ff69b4;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ffb6c1aa;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  text-shadow: 1px 1px 0 #fff;
+  outline: none;
+}
+.third-btn:hover {
+  background: linear-gradient(90deg, #ffe6fa 0%, #ffb6c1 100%);
+  color: #fff;
+  transform: scale(1.07) rotate(-2deg);
+  border-color: #ff1493;
+}
+
+.third-btn.no {
+  background: linear-gradient(90deg, #b6c1ff 0%, #e6faff 100%);
+  color: #6949ff;
+  border: 2.5px solid #6949ff;
+}
+.third-btn.no:hover {
+  background: linear-gradient(90deg, #e6faff 0%, #b6c1ff 100%);
+  color: #fff;
+  border-color: #6949ff;
+}
+
+@media (max-width: 600px) {
+  .third-content {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  .third-heading {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+  .third-btn-group {
+    gap: 1.1rem;
+  }
+  .third-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.8rem;
+  }
+  .playvideo-main {
+    max-width: 98vw;
+    max-height: 40vh;
+  }
+}
+
+.playvideo-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1000;
+  background: rgba(255, 230, 250, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInLetter 0.3s;
+}
+
+.playvideo-main {
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 2px 16px #ffb6c1;
+  background: #fffdfa;
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+.close-playvideo {
+  position: absolute;
+  top: 1.1rem;
+  right: 2.2rem;
+  background: #ffb6c1;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #ffb6c1aa;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.close-playvideo:hover {
+  background: #ff1493;
+  color: #fff0f6;
+  transform: scale(1.1) rotate(-10deg);
+}
+
+.rain-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: transparent;
+  overflow: hidden;
+}
+
+.rain-word {
+  position: absolute;
+  font-family: 'Press Start 2P', 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  font-size: 1.1rem;
+  color: #ff1493;
+  text-shadow: 2px 2px 0 #fff, 1px 1px 0 #ffb6c1;
+  font-weight: bold;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.92;
+  white-space: nowrap;
+}
+
+@keyframes rain-down {
+  0% { top: -5vh; opacity: 0.92; }
+  80% { opacity: 1; }
+  100% { top: 110vh; opacity: 0.92; }
+}
+@keyframes rain-up {
+  0% { bottom: -5vh; opacity: 0.92; }
+  80% { opacity: 1; }
+  100% { bottom: 110vh; opacity: 0.92; }
+}
+@keyframes rain-left {
+  0% { right: -10vw; opacity: 0.92; }
+  80% { opacity: 1; }
+  100% { right: 110vw; opacity: 0.92; }
+}
+@keyframes rain-right {
+  0% { left: -10vw; opacity: 0.92; }
+  80% { opacity: 1; }
+  100% { left: 110vw; opacity: 0.92; }
+}
+
+.close-rain {
+  position: absolute;
+  top: 1.1rem;
+  right: 2.2rem;
+  background: #ffb6c1;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #ffb6c1aa;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.close-rain:hover {
+  background: #ff1493;
+  color: #fff0f6;
+  transform: scale(1.1) rotate(-10deg);
+} 

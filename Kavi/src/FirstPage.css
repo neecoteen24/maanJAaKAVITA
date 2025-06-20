@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.first-page-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Press Start 2P', 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  background: #ffe6fa;
+  /* Polka dot background */
+  background-image: radial-gradient(#d1a3c7 7px, transparent 8px), radial-gradient(#d1a3c7 7px, transparent 8px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.6) blur(1.5px) saturate(1.2);
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff0f6;
+  text-align: center;
+  background: rgba(255, 182, 193, 0.85);
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  border-radius: 2.5rem;
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25), 0 2px 16px #ffb6c1;
+  border: 3px dashed #ffb6c1;
+  max-width: 95vw;
+  width: 540px;
+  min-width: 270px;
+  backdrop-filter: blur(2px);
+}
+
+.overlay h1 {
+  font-size: 1.7rem;
+  margin-bottom: 2.2rem;
+  color: #ff69b4;
+  text-shadow:
+    2px 2px 0 #fff,
+    4px 4px 0 #ffb6c1;
+  letter-spacing: 2px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.overlay p {
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  color: #fff0f6;
+  text-shadow:
+    1.5px 1.5px 0 #ffb6c1;
+  font-weight: bold;
+}
+
+.yes-button {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  padding: 1.2rem 3.2rem;
+  background: linear-gradient(90deg, #ffb6c1 0%, #ffe6fa 100%);
+  color: #ff1493;
+  border: 3px solid #ff69b4;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: inherit;
+  box-shadow: 0 4px 16px #ffb6c1aa, 0 2px 8px #fff0f6;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  text-shadow: 1.5px 1.5px 0 #fff;
+  outline: none;
+}
+.yes-button:hover {
+  background: linear-gradient(90deg, #ffe6fa 0%, #ffb6c1 100%);
+  color: #fff;
+  transform: scale(1.09) rotate(-2deg);
+  border-color: #ff1493;
+}
+
+.features-section {
+  min-height: 100vh;
+  background: #fff0f6;
+  color: #ff69b4;
+  padding: 4rem 2rem;
+  font-family: inherit;
+}
+
+@media (max-width: 900px) {
+  .overlay {
+    width: 90vw;
+    max-width: 98vw;
+    padding: 2rem 0.7rem 1.5rem 0.7rem;
+  }
+  .overlay h1 {
+    font-size: 1.2rem;
+  }
+  .overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .first-page-container {
+    height: auto;
+    min-height: 100vh;
+  }
+  .overlay {
+    padding: 1.2rem 0.2rem 1rem 0.2rem;
+    width: 99vw;
+    max-width: 100vw;
+    border-radius: 1.2rem;
+  }
+  .overlay h1 {
+    font-size: 1rem;
+  }
+  .overlay p {
+    font-size: 0.9rem;
+  }
+  .yes-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .cloud {
+    width: 120px;
+    top: 18%;
+    left: -140px;
+  }
+  .cloud2 {
+    width: 150px;
+    top: 65%;
+  }
+  .cloud3 {
+    width: 110px;
+    top: 50%;
+    right: -140px;
+  }
+}
+
+@media (max-width: 400px) {
+  .overlay {
+    padding: 0.7rem 0.1rem 0.5rem 0.1rem;
+    width: 100vw;
+    border-radius: 0.7rem;
+  }
+}
+
+/* Import retro-cute font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.cloud-transition {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: transparent;
+}
+
+.cloud {
+  position: absolute;
+  width: 320px;
+  opacity: 0.97;
+  top: 25%;
+  left: -350px;
+  animation: cloud-move 1.2s cubic-bezier(0.4,0,0.6,1) forwards;
+}
+
+.cloud2 {
+  top: 60%;
+  width: 400px;
+  animation-delay: 0.2s;
+}
+
+.cloud3 {
+  top: 40%;
+  width: 350px;
+  left: auto;
+  right: -350px;
+  animation: cloud-move-reverse 1.2s cubic-bezier(0.4,0,0.6,1) forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes cloud-move {
+  0% {
+    left: -350px;
+    opacity: 0.97;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 110vw;
+    opacity: 0.97;
+  }
+}
+
+@keyframes cloud-move-reverse {
+  0% {
+    right: -350px;
+    opacity: 0.97;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    right: 110vw;
+    opacity: 0.97;
+  }
+} 
